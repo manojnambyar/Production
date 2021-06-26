@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="100"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/geo_logo_mobile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:text="Raw material and mixing composition"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:id="@+id/orderGroup"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="33"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="Req. Products"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="LocalIdli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etLocalIdli"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="LI"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Geo Idli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etGeoIdli"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="GI"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Corp Idli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etCorpIdli"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="CI"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Meduvada"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etVada"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="MV"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Grtd Coconut"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etCoconut"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="GC"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Dosa"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etDosa"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="GD"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Chutney"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etChutney"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="CC"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="AP Powder"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etAp"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="AP"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="PP Powder"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etPp"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="PP"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="WP Powder"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etWp"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0.000"
+                    android:inputType="number|numberDecimal"
+                    android:tag="WP"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="55"
+                    android:text="22-Jun-2021"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15" />
+
+                <ImageView
+                    android:id="@+id/btnCalculate"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="30"
+                    android:onClick="onClick"
+                    android:padding="2dp"
+                    android:src="@drawable/calc"
+                    android:tag="calc"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/RMGroup"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="33"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="RM For Idli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Rice-Idli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvRiceIdli"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="iR"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Boiled Rice"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvBoiledRice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="iBR"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Urad-Idli"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvUradIdli"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="iU"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="RM For Vada"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Urad Vada"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvUradVada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="vU"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="RM For Dosa"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="R-Rice_Dosa"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvRRiceDosa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="dRR"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="I_Rice_Dosa"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvIRiceDosa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="dIR"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Urad-Dosa"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvUradDosa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="dU"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Chanadal"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvChanadal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="dC"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Fenugreek"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvFenugreek"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="dF"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="RM For Grated Coconut"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Coconut"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvCoconut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="C"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15" />
+
+                <ImageView
+                    android:id="@+id/btnSendWA"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="32"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:src="@drawable/wa"
+                    android:tag="waproduction"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15" />
+
+                <ImageView
+                    android:id="@+id/btnSendSMS"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="38"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:src="@drawable/sms"
+                    android:tag="smsproduction"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chutneyRMGroup"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="33"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="100"
+                    android:gravity="bottom"
+                    android:lines="1"
+                    android:text="RM For Chutney"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Grt-Coconut"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvGratedCoconut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="gc"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Green Chilly"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvGreenChilly"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="greenChilly"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Ginger"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvGinger"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="ginger"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Onion"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvOnion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="onion"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Tamarint"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvTamarint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="tamarint"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Salt"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvSalt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="salt"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Mustard"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvMustard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="mustard"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Red Chilly"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvRedChilly"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="redChilly"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Coconut Oil"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvCoconutOil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="coconutOil"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="65"
+                    android:lines="1"
+                    android:text="Water"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvWater"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:lines="1"
+                    android:tag="water"
+                    android:text="0.000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15" />
+
+                <ImageView
+                    android:id="@+id/btnSendWAChutney"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="32"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:src="@drawable/wa"
+                    android:tag="wacc"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15" />
+
+                <ImageView
+                    android:id="@+id/btnSendSMSChutney"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="38"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:src="@drawable/sms"
+                    android:tag="smscc"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/receiverGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:checked="true"
+            android:tag="Manoj"
+            android:text="Manoj" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="Balika"
+            android:text="Balika" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="Padma"
+            android:text="Padma" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="Shiva"
+            android:text="Shiva" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="Sabitha"
+            android:text="Sabitha" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
