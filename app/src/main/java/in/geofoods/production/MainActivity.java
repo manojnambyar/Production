@@ -516,7 +516,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (CI == 0.0)
             iR = iR + 0.00;
         else
-            iR = iR + (CI + 1) / 3.62350 / (1 + boilMix);
+            iR = iR + (CI + 2) / 3.62350 / (1 + boilMix);
 
 
         //*******************************calculate Rice to Boil for Idli *******************
