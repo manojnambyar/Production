@@ -5,7 +5,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvDate;
 
     //vars
-    Double LI, GI, CI, MV, GC, GD, CC; // finished products variables
+    Double LI, GI, CI, MV, GC, GD, CC , AP,PP,WP; // finished products variables
     Double iR, iBR, iU, vU, dRR, dIR, dU, dC, dF, C; // raw materials variables
     Double gc, greenChilly, ginger, onion, tamarint, salt, mustard, redChilly, coconutOil, water, totChutney, extra; // chutney raw materials variables
     private String smsRM, smsCCRM, smsOrdr;
@@ -51,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvDate = findViewById(R.id.dateText);
 
         setdate();
-
-
     }
 
     //getting order data into variables from the text field
@@ -125,6 +122,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     smsOrdr+="\nCC-"+CC;
                                 }
                                 break;
+                            case "AP":
+                                if (((EditText) v2).getText().toString().isEmpty()) {
+                                    AP = 0.0;
+                                } else {
+                                    AP = Double.parseDouble(((EditText) v2).getText().toString());
+                                    smsOrdr+="\nAP-"+AP;
+                                }
+                                break;
+                            case "PP":
+                                if (((EditText) v2).getText().toString().isEmpty()) {
+                                    PP = 0.0;
+                                } else {
+                                    PP = Double.parseDouble(((EditText) v2).getText().toString());
+                                    smsOrdr+="\nPP-"+PP;
+                                }
+                                break;
+                            case "WP":
+                                if (((EditText) v2).getText().toString().isEmpty()) {
+                                    WP = 0.0;
+                                } else {
+                                    WP = Double.parseDouble(((EditText) v2).getText().toString());
+                                    smsOrdr+="\nWP-"+WP;
+                                }
+                                break;
 
                         }
                     }
@@ -137,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
-//        Log.d(TAG, "getOrderData 1: "+ (LI+GI+CI+MV+GC+GD+CC));
+//        Log.d(TAG, "getOrderData 1: "+ (LI+GI+CI+MV+GC+GD+CC+AP+PP+WP));
         calculateRM();
 
     }
@@ -181,6 +202,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } catch (Exception e) {
             Log.d(TAG, "sendSMS:  error is :" + e.toString());
+            Toast.makeText(this, "Error is " + e.toString(), Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -284,7 +306,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int i = 0; i < addressee.size(); i++) {
                 sendSMS(message, addressee.get(i));
             }
-            Toast.makeText(this, "SMS send ", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "SMS send ", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -565,7 +588,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             C = C + (GC / 0.21);
 
 
-        //*************************** calculate ingredients for dosa*****************
+        //*************************** calculate ingredients for dosa *****************
         dRR = GD / 3.48488 * 0.8;
         dIR = GD / 3.48488 * 0.2;
         dU = (dRR + dIR) / dosaMix;
