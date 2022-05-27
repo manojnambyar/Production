@@ -35,10 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvDate;
 
     //vars
+    Integer Ord;
     Double LI, GI, CI, MV, GC, GD, CC , AP,PP,WP; // finished products variables
     Double iR, iBR, iU, vU, dRR, dIR, dU, dC, dF, C; // raw materials variables
     Double gc, greenChilly, ginger, onion, tamarint, salt, mustard, redChilly, coconutOil, water, totChutney, extra; // chutney raw materials variables
-    private String smsRM, smsCCRM, smsOrdr;
+    private String smsRM, smsCCRM, smsOrdr,dateText,remarks;
     private ArrayList<String> addressee;
 
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //getting order data into variables from the text field
     private void getOrderData() {
-        smsOrdr = "\n*Ord:*";
+        smsOrdr = "\n*Ordr-";
         Log.d(TAG, "getOrderData: reached");
         LinearLayout orderGroup = findViewById(R.id.orderGroup);
         for (int i = 0; i < orderGroup.getChildCount(); i++) {
@@ -66,6 +67,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (v2 instanceof EditText && v2.getTag() != null) {
                         switch (v2.getTag().toString()) {
+                            case "Ord":
+                                if (((EditText) v2).getText().toString().isEmpty()) {
+                                    Ord = 0;
+                                } else {
+                                    Ord = Integer.parseInt(((EditText) v2).getText().toString());
+                                    smsOrdr +=  Ord + "*" + "[ "+ dateText +" ]";
+                                    //smsOrdr +=  Ord;
+                                }
+                                break;
                             case "LI":
                                 if (((EditText) v2).getText().toString().isEmpty()) {
                                     LI = 0.0;
@@ -147,6 +157,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
                                 break;
 
+                            case "Rem":
+                                if (((EditText) v2).getText().toString().isEmpty()) {
+                                    remarks = "";
+                                } else {
+                                    remarks = ((EditText) v2).getText().toString();
+                                    smsOrdr+="\nN:-"+remarks;
+                                }
+                                break;
+
                         }
                     }
 
@@ -168,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setdate() {
 
         tvDate.setText(new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date()));
+        dateText = tvDate.getText().toString();
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Order Date");
         final MaterialDatePicker materialDatePicker = builder.build();
@@ -175,13 +195,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 materialDatePicker.show(getSupportFragmentManager(), TAG);
-
             }
         });
         materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
             @Override
             public void onPositiveButtonClick(Object selection) {
                 tvDate.setText(materialDatePicker.getHeaderText());
+                dateText = tvDate.getText().toString();
+                //Toast.makeText(MainActivity.this, tvDate.getText().toString(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -367,62 +388,102 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (v2 instanceof TextView && v2.getTag() != null) {
 //                        Log.d(TAG, "setRMToTextView: "+v2.getTag().toString());
                         DecimalFormat formatter = new DecimalFormat("#,##0.000");
-//                        formatter.setMaximumFractionDigits(3);
-//                        formatter.setMinimumFractionDigits(3);
-//                        formatter.setMinimumIntegerDigits(1);
-//                        formatter.setRoundingMode(RoundingMode.HALF_UP);
+/*                        formatter.setMaximumFractionDigits(3);
+                        formatter.setMinimumFractionDigits(3);
+                        formatter.setMinimumIntegerDigits(1);
+                        formatter.setRoundingMode(RoundingMode.HALF_UP);*/
 
                         switch (v2.getTag().toString()) {
                             case "iR":
                                 ((TextView) v2).setText(formatter.format(iR));
 //                                ((TextView) v2).setText(iR.toString());
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iR);
+                                if(iR<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iR);
+                                }
                                 break;
                             case "iBR":
                                 ((TextView) v2).setText(formatter.format(iBR));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iBR);
+                                if(iBR<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iBR);
+                                }
                                 break;
                             case "iU":
                                 ((TextView) v2).setText(formatter.format(iU));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iU);
+                                if(iU<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(iU);
+                                }
                                 break;
                             case "vU":
                                 ((TextView) v2).setText(formatter.format(vU));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(vU);
+                                if(vU<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(vU);
+                                }
                                 break;
                             case "dRR":
                                 ((TextView) v2).setText(formatter.format(dRR));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dRR);
+                                if(dRR<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dRR);
+                                }
                                 break;
                             case "dIR":
                                 ((TextView) v2).setText(formatter.format(dIR));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dIR);
+                                if(dIR<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dIR);
+                                }
                                 break;
                             case "dU":
                                 ((TextView) v2).setText(formatter.format(dU));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dU);
+                                if(dU<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dU);
+                                }
                                 break;
                             case "dC":
                                 ((TextView) v2).setText(formatter.format(dC));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dC);
+                                if(dC<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dC);
+                                }
                                 break;
                             case "dF":
                                 ((TextView) v2).setText(formatter.format(dF));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dF);
+                                if(dF<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(dF);
+                                }
                                 break;
                             case "C":
                                 ((TextView) v2).setText(formatter.format(C));
 //                                Log.d(TAG, "setRMToTextView: "+((TextView) v2).getText());
-                                smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(C);
+                                if(C<0.001){
+                                    smsRM +="";
+                                }else {
+                                    smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(C);
+                                }
                                 break;
                         }
 
@@ -517,7 +578,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Double gIdliMix = 4.00;
         Double cIdliMix = 3.33333;
         Double dosaMix = 6.6666666666;
-        Double boilMix = 0.0775;
+        Double boilMix = 0.035;
 
 //        ****************************************** calculating raw materials required.
 

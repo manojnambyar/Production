@@ -39,14 +39,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_weight="45"
+        android:layout_weight="50"
         android:orientation="horizontal"
         android:weightSum="100">
 
         <LinearLayout
             android:id="@+id/orderGroup"
             android:layout_width="0dp"
-            android:layout_height="312dp"
+            android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:layout_weight="33"
             android:orientation="vertical"
@@ -69,6 +69,40 @@
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="OrderNo:"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etOrderNo"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:tag="Ord"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -376,6 +410,37 @@
                     android:hint="0.000"
                     android:inputType="number|numberDecimal"
                     android:tag="WP"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Remarks"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etRemarks"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="40"
+                    android:background="@null"
+                    android:gravity="bottom|end"
+                    android:hint=""
+                    android:inputType="text"
+                    android:tag="Rem"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="11sp" />
