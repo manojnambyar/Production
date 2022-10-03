@@ -31,7 +31,7 @@
             android:gravity="center_vertical"
             android:text="Raw material and mixing composition"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_200"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -49,6 +49,7 @@
             android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:layout_weight="33"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="5dp">
 
@@ -492,6 +493,7 @@
             android:layout_margin="0dp"
             android:layout_weight="33"
             android:orientation="vertical"
+            android:background="@color/white"
             android:padding="5dp">
 
             <LinearLayout
@@ -926,6 +928,7 @@
             android:layout_margin="0dp"
             android:layout_weight="33"
             android:orientation="vertical"
+            android:background="@color/white"
             android:padding="5dp">
 
             <LinearLayout
@@ -1307,32 +1310,44 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:checked="true"
-            android:tag="Manoj"
-            android:text="Manoj" />
+            android:tag="MK"
+            android:weightSum="15"
+            android:text="MK" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="SMK"
+            android:weightSum="15"
+            android:text="SMK" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:tag="Balika"
+            android:weightSum="15"
             android:text="Balika" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:tag="Padma"
+            android:weightSum="15"
             android:text="Padma" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tag="Rekha"
+            android:weightSum="15"
+            android:text="Rekha" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:tag="Shiva"
+            android:weightSum="15"
             android:text="Shiva" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:tag="Sabitha"
-            android:text="Sabitha" />
+
 
     </LinearLayout>
 

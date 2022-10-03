@@ -341,8 +341,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (v instanceof CheckBox && ((CheckBox) v).isChecked()) {
 //                Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is checked");
                 switch (v.getTag().toString()) {
-                    case "Manoj":
+                    case "MK":
                         addressee.add("9820730135");
+//                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
+                        break;
+                    case "SMK":
+                        addressee.add("9820240135");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
                     case "Balika":
@@ -353,14 +357,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addressee.add("9324471943");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
+                    case "Rekha":
+                        addressee.add("9152262374");
+//                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
+                        break;
                     case "Shiva":
                         addressee.add("9967280169");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "Sabitha":
-                        addressee.add("9820240135");
-//                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
-                        break;
+
                 }
             }
 
@@ -650,8 +655,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         //*************************** calculate ingredients for dosa *****************
-        dRR = GD / 3.48488 * 0.8;
-        dIR = GD / 3.48488 * 0.2;
+        dRR = GD / 3.48488 * 1.0 *5/3.5;
+        dIR = GD / 3.48488 * 0.0;
         dU = (dRR + dIR) / dosaMix;
         dC = dU / 2;
         dF = (dRR + dIR + dU + dC) * 0.008;
