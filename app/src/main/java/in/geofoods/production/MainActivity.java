@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String TAG = "com.geofoods.production.MainActivity";
     //ui
-    TextView tvDate;
+    TextView tvDate,tvValue;
 
     //vars
     Integer Ord;
+    Double LI_rate, GI_rate, CI_rate, MV_rate, GC_rate, GD_rate, CC_rate , AP_rate,PP_rate,WP_rate,GrossVal;
+
     Double LI, GI, CI, MV, GC, GD, CC , AP,PP,WP; // finished products variables
     Double iR, iBR, iU, vU, dRR, dIR, dU, dC, dF, C; // raw materials variables
     Double gc, greenChilly, ginger, onion, tamarint, salt, mustard, redChilly, coconutOil, water, totChutney, extra; // chutney raw materials variables
@@ -48,13 +50,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreate: reached");
-        tvDate = findViewById(R.id.dateText);
 
+        tvDate = findViewById(R.id.dateText);
+        tvValue = findViewById(R.id.tvValue);
+
+        LI_rate = 30.0;
+        GI_rate = 37.0;
+        CI_rate = 43.25;
+        MV_rate=115.50;
+        GC_rate=276.25;
+        GD_rate=38.0;
+        CC_rate=50.0;
+        AP_rate=70.0;
+        PP_rate=80.0;
+        WP_rate=54.0;
         setdate();
     }
 
     //getting order data into variables from the text field
     private void getOrderData() {
+        GrossVal = 0.00;
         smsOrdr = "\n*Ordr-";
         Log.d(TAG, "getOrderData: reached");
         LinearLayout orderGroup = findViewById(R.id.orderGroup);
@@ -82,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     LI = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr += "\nLI-" + LI;
+                                    GrossVal = GrossVal + (LI * LI_rate);
                                 }
                                 break;
                             case "GI":
@@ -90,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     GI = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nGI-"+GI;
+                                    GrossVal = GrossVal + (GI * GI_rate);
                                 }
                                 break;
                             case "CI":
@@ -98,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     CI = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nCI-"+CI;
+                                    GrossVal = GrossVal + (CI * CI_rate);
                                 }
                                 break;
                             case "MV":
@@ -106,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     MV = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nMV-"+MV;
+                                    GrossVal = GrossVal + (MV * MV_rate);
                                 }
                                 break;
                             case "GC":
@@ -114,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     GC = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nGC-"+GC;
+                                    GrossVal = GrossVal + (GC * GC_rate);
                                 }
                                 break;
                             case "GD":
@@ -122,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     GD = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nGD-"+GD;
+                                    GrossVal = GrossVal + (GD * GD_rate);
                                 }
                                 break;
                             case "CC":
@@ -130,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     CC = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nCC-"+CC;
+                                    GrossVal = GrossVal + (CC * CC_rate);
                                 }
                                 break;
                             case "AP":
@@ -138,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     AP = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nAP-"+AP;
+                                    GrossVal = GrossVal + (AP * AP_rate);
                                 }
                                 break;
                             case "PP":
@@ -146,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     PP = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nPP-"+PP;
+                                    GrossVal = GrossVal + (PP * PP_rate);
                                 }
                                 break;
                             case "WP":
@@ -154,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 } else {
                                     WP = Double.parseDouble(((EditText) v2).getText().toString());
                                     smsOrdr+="\nWP-"+WP;
+                                    GrossVal = GrossVal + (WP * WP_rate);
                                 }
                                 break;
 
@@ -178,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 //        Log.d(TAG, "getOrderData 1: "+ (LI+GI+CI+MV+GC+GD+CC+AP+PP+WP));
+        tvValue.setText(GrossVal + "");
         calculateRM();
 
     }
@@ -186,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //setting initial date and selected date from date picker
     private void setdate() {
 
-        tvDate.setText(new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date()));
+        tvDate.setText(new SimpleDateFormat("EEEE   MMM dd, yyyy", Locale.getDefault()).format(new Date()));
         dateText = tvDate.getText().toString();
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Order Date");
@@ -288,7 +314,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void sendWA(String message) {
         getAdressee();
-        if (isWhatsappInstalled("com.whatsapp")) {
+        boolean i_wap = isWhatsappInstalled("com.whatsapp");
+        boolean i_wab = isWhatsappInstalled("com.whatsapp.w4b");
+
+        if (isWhatsappInstalled("com.whatsapp") || isWhatsappInstalled("com.whatsapp.w4b")) {
 
             if (addressee == null || addressee.isEmpty() || addressee.size() == 0) {
                 Toast.makeText(this, "No receiver selected,No message send", Toast.LENGTH_SHORT).show();
@@ -296,7 +325,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 for (int i = 0; i < addressee.size(); i++) {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=91" + addressee.get(i) + "&text=" + message));
-                    startActivity(intent);
+                    //new code added....
+                        if (i_wab) {
+                            //Toast.makeText(this, "Whatsapp business present " + i_wab, Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, "onClick: wa business present" );
+                            intent.setPackage("com.whatsapp.w4b");
+                        }else if(i_wap){
+                            //Toast.makeText(this, "Whatsapp personal present " + i_wap, Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, "onClick: wa personal present" );
+                            intent.setPackage("com.whatsapp");
+                        }
+                        PackageManager packageManager = this.getPackageManager();
+                        if (intent.resolveActivity(packageManager) != null) {
+                            startActivity(intent);
+                        }
+
                 }
                 Toast.makeText(this, "Whatsapp message send ", Toast.LENGTH_SHORT).show();
             }
@@ -490,6 +533,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     smsRM += "\n" + v2.getTag().toString() + "-" + formatter.format(C);
                                 }
                                 break;
+
                         }
 
 
@@ -655,8 +699,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         //*************************** calculate ingredients for dosa *****************
-        dRR = GD / 3.48488 * 1.0 *5/3.5;
-        dIR = GD / 3.48488 * 0.0;
+        dRR = (GD+1) / 3.48488 * 1.0 *5/3.5;
+        dIR = (GD+1) / 3.48488 * 0.0;
         dU = (dRR + dIR) / dosaMix;
         dC = dU / 2;
         dF = (dRR + dIR + dU + dC) * 0.008;
@@ -681,7 +725,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         water = ((CC * 300 + extra) * 270.000 / 450) / 1000;
         totChutney = gc + greenChilly + ginger + onion + tamarint + salt + mustard + redChilly + coconutOil + water;
 
+       // tvValue.setText(GrossVal + "");
         setRMToTextView();
+
 
     }
 }

@@ -95,7 +95,7 @@
                     android:layout_height="25dp"
                     android:layout_weight="40"
                     android:background="@null"
-                    android:gravity="bottom|end"
+                    android:gravity="center_horizontal"
                     android:hint="0"
                     android:inputType="number"
                     android:tag="Ord"
@@ -876,7 +876,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -918,6 +917,38 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:lines="1"
+                    android:text="Value : "
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:lines="1"
+                    android:tag="Val"
+                    android:text="0.00"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -1309,7 +1340,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:checked="true"
+            android:checked="false"
             android:tag="MK"
             android:weightSum="15"
             android:text="MK" />
@@ -1317,6 +1348,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:tag="SMK"
+            android:checked="true"
             android:weightSum="15"
             android:text="SMK" />
 
