@@ -393,7 +393,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
                     case "Balika":
-                        addressee.add("8879733626");
+                        addressee.add("7400142718");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
                     case "Padma":
@@ -404,8 +404,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addressee.add("9152262374");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "Shiva":
-                        addressee.add("9967280169");
+                    case "Mkb":
+                        addressee.add("9820730135");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
 
