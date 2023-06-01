@@ -1375,9 +1375,9 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:tag="Shiva"
+            android:tag="Mkb"
             android:weightSum="15"
-            android:text="Shiva" />
+            android:text="Mkb" />
 
 
 
