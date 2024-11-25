@@ -1335,49 +1335,59 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:gravity="center_vertical">
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:checked="true"
+            android:tag="MK"
+            android:text="MK"
+            android:weightSum="15" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:checked="true"
+            android:tag="SM"
+            android:text="SM"
+            android:weightSum="15" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:checked="true"
+            android:tag="OF"
+            android:text="OF"
+            android:weightSum="15" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:checked="false"
-            android:tag="MK"
-            android:weightSum="15"
-            android:text="MK" />
+            android:tag="BT"
+            android:text="BT"
+            android:weightSum="15" />
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:tag="SMK"
             android:checked="true"
-            android:weightSum="15"
-            android:text="SMK" />
+            android:tag="AJ"
+            android:text="AS"
+            android:weightSum="15" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:tag="Balika"
-            android:weightSum="15"
-            android:text="Balika" />
+            android:checked="true"
+            android:tag="RW"
+            android:text="RW"
+            android:weightSum="15" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:tag="Padma"
-            android:weightSum="15"
-            android:text="Padma" />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:tag="Rekha"
-            android:weightSum="15"
-            android:text="Rekha" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:tag="Mkb"
-            android:weightSum="15"
-            android:text="Mkb" />
 
 
 

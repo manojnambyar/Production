@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvDate = findViewById(R.id.dateText);
         tvValue = findViewById(R.id.tvValue);
 
-        LI_rate = 30.0;
-        GI_rate = 37.0;
+        LI_rate = 39.0;
+        GI_rate = 49.0;
         CI_rate = 43.25;
         MV_rate=115.50;
         GC_rate=276.25;
-        GD_rate=38.0;
+        GD_rate=49.0;
         CC_rate=50.0;
         AP_rate=70.0;
         PP_rate=80.0;
@@ -388,26 +388,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addressee.add("9820730135");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "SMK":
+                    case "SM":
                         addressee.add("9820240135");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "Balika":
+                    case "OF":
+                        addressee.add("7710044222");
+//                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
+                        break;
+                    case "BT":
                         addressee.add("7400142718");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "Padma":
-                        addressee.add("9324471943");
-//                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
-                        break;
-                    case "Rekha":
+
+                    case "RW":
                         addressee.add("9152262374");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
-                    case "Mkb":
-                        addressee.add("9820730135");
+                    case "AS":
+                        addressee.add("7039268230");
 //                        Log.d(TAG, "getAdressee: "+v.getTag().toString()+" is cheked");
                         break;
+
 
                 }
             }
@@ -626,7 +628,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Double lIdliMix = 7.00;
         Double gIdliMix = 4.00;
         Double cIdliMix = 3.33333;
-        Double dosaMix = 6.6666666666;
+        Double dosaMix = 5.0505050530;
         Double boilMix = 0.035;
 
 //        ****************************************** calculating raw materials required.
@@ -695,12 +697,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (GC == 0.0)
             C = C + 0.00;
         else
-            C = C + (GC / 0.21);
+            C = C + (GC / 0.19);
 
 
         //*************************** calculate ingredients for dosa *****************
-        dRR = (GD+1) / 3.48488 * 1.0 *5/3.5;
-        dIR = (GD+1) / 3.48488 * 0.0;
+        dRR = (GD+1) / 3.48488 * 1.0*5/3.5;
+        dIR = (GD+1) / 3.48488 * 0.0; //48488'
         dU = (dRR + dIR) / dosaMix;
         dC = dU / 2;
         dF = (dRR + dIR + dU + dC) * 0.008;
